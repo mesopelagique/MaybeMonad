@@ -31,3 +31,13 @@ $firstFriendGender:=maybe(ds.User.query("Name = :1"; $userName).first())\
 ```
 
 by just applying function only if not null
+
+
+In a langage with a lot of suggar syntax (formula with {}, operator for objects) we could have something like that
+
+```swift
+$firstFriendGender:={ ds.User.query("Name = :1"; $userName).first() }
+  >>= { $1.friends }
+  >>= { $1.first() }
+  >>= { $1.Gender }
+```
