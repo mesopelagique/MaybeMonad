@@ -20,8 +20,7 @@ If ($user#Null:C1517)
 End if 
 
 // with maybe
-$firstFriendGender:=maybe($userName)\
-.bind(Formula:C1597(ds:C1482.User.query("Name = :1"; $1).first()))\
+$firstFriendGender:=maybe(ds:C1482.User.query("Name = :1"; $userName).first())\
 .bind(Formula:C1597($1.friends))\
 .bind(Formula:C1597($1.first()))\
 .bind(Formula:C1597($1.Gender))
