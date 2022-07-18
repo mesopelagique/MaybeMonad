@@ -33,7 +33,8 @@ $firstFriendGender.value:=\
 ds.User.query("Name = :1"; "Unknown").first()\
 .friends\
 .first()\
-.Gender*/
+.Gender
+*/
 
 // This not, just return null
 $firstFriendGender:=maybe("Unknown")\
