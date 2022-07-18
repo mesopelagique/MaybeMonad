@@ -24,8 +24,7 @@ End if
 become
 
 ```4d
-$firstFriendGender:=maybe($userName)\
-  .bind(Formula(ds.User.query("Name = :1"; $1).first()))\
+$firstFriendGender:=maybe(ds.User.query("Name = :1"; $userName).first())\
   .bind(Formula($1.friends))\
   .bind(Formula($1.first()))\
   .bind(Formula($1.Gender))
